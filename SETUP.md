@@ -355,7 +355,18 @@ kubectl get pods -n online-boutique
 
 ## Step 7 — Agent Builder
 
-Uses **Elastic Inference Service (EIS)** — Elastic's managed LLM infrastructure, built into the GCP Marketplace trial. No API key or external connector needed. The model is selected from a dropdown inside Agent Builder.
+### LLM setup
+
+Agent Builder needs an LLM. Two options depending on what your account shows:
+
+**Option A — Elastic managed LLM (EIS) — no setup needed**
+If you see Claude or other models pre-listed in the model dropdown when creating an agent, just select one. This is Elastic Inference Service — available on GCP Marketplace trial and some hosted deployments.
+
+**Option B — External connector (OpenAI)**
+If no models appear: Kibana → ☰ → **Stack Management** → **Connectors** → **Create connector** → **OpenAI**
+- API key from `platform.openai.com`
+- Model: `gpt-4o`
+- Click **Save & test** — then select it in Agent Builder.
 
 ### 7a. Create the tools
 

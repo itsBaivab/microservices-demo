@@ -355,7 +355,7 @@ kubectl get pods -n online-boutique
 
 ## Step 7 — Agent Builder
 
-Uses Elastic's native **Claude claude-sonnet-4-6** — no external LLM connector needed.
+Uses **Elastic Inference Service (EIS)** — Elastic's managed LLM infrastructure, built into the GCP Marketplace trial. No API key or external connector needed. The model is selected from a dropdown inside Agent Builder.
 
 ### 7a. Create the tools
 

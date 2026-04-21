@@ -152,9 +152,12 @@ From `cloud.elastic.co` → click your deployment:
 | Elasticsearch endpoint | Under **Elasticsearch** → **Copy endpoint** | GitHub secret `ES_ENDPOINT`, curl commands |
 | OTLP ingest endpoint | Under **Integrations** → **Manage** → **APM** → copy the OTLP endpoint | OTel kube-stack secret `elastic_otlp_endpoint` | (i am not suer if we need this or not check once that it is working without it or not if not then set this up as well. )
 
-### 3c. Create API key — open Kibana once
+### 3c. Get your API key
 
-Get the api keys from main elastic cloud deployment we need to use it for authentication in curl commands in github actions and OTel kube-stack. 
+`cloud.elastic.co` → your deployment → **Elasticsearch** → copy the API key shown there.
+
+This same key is used for both GitHub Actions (`ES_API_KEY`) and OTel kube-stack (`elastic_api_key`). Kibana is only needed in Step 7 for the Agent Builder.
+
 Verify:
 ```bash
 curl -s -w "\nHTTP:%{http_code}" \
